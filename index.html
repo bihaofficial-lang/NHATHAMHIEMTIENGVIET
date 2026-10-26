@@ -47,7 +47,7 @@ const questions=[
 {tag:'↔️ Từ trái nghĩa',q:'Từ nào trái nghĩa với “vui vẻ”?',a:['Hạnh phúc','Buồn bã','Rộn ràng','Thân thiện'],correct:1,explain:'“Buồn bã” có nghĩa trái ngược với “vui vẻ”.'},
 {tag:'❔ Dấu câu',q:'Điền dấu câu thích hợp: “Bạn đã đọc bài thơ chưa___”',a:['Dấu chấm (.)','Dấu phẩy (,)','Dấu hỏi (?)','Dấu chấm than (!)'],correct:2,explain:'Đây là câu hỏi nên cuối câu dùng dấu hỏi.'},
 {tag:'🧩 Sắp xếp câu',q:'Sắp xếp các từ thành câu hoàn chỉnh: “trên cành / ríu rít / chim non / hót”',a:['Trên cành chim non ríu rít hót.','Chim non hót ríu rít trên cành.','Ríu rít trên cành hót chim non.','Hót chim non trên cành ríu rít.'],correct:1,explain:'Câu đúng: “Chim non hót ríu rít trên cành.”'},
-{tag:'📖 Đọc hiểu',q:'Trong khu vườn, Bình đã làm gì?',a:['Tưới rau','Nhặt lá khô bỏ vào giỏ','Hái hoa','Bắt sâu'],correct:1,explain:'Đoạn văn kể Bình nhặt lá khô bỏ vào giỏ.'},
+{tag:'📖 Đọc hiểu',q:'Đọc đoạn văn: “Bình ra khu vườn. Bình nhặt lá khô bỏ vào giỏ.” Bình đã làm gì?',a:['Tưới rau','Nhặt lá khô bỏ vào giỏ','Hái hoa','Bắt sâu'],correct:1,explain:'Đoạn văn kể Bình nhặt lá khô bỏ vào giỏ.'},
 {tag:'🌟 Chọn câu so sánh',q:'Câu nào có hình ảnh so sánh dùng để tả tiếng chim?',a:['Tiếng chim vang xa khắp vườn.','Tiếng chim trong trẻo như tiếng sáo.','Chim non đang đậu trên cành.','Buổi sáng, chim hót líu lo.'],correct:1,explain:'Từ “như” nối tiếng chim với tiếng sáo trong hình ảnh so sánh.'}
 ];
 let index=0,score=0,selected=null,locked=false;const $=id=>document.getElementById(id);const letters=['A','B','C','D'];
@@ -65,7 +65,6 @@ $('check').addEventListener('click',()=>{if(selected===null)return;if(locked){in
 function finish(){$('quiz').classList.add('hidden');$('result').classList.remove('hidden');$('finalScore').textContent='⭐ '+score+' / 150 điểm';$('resultText').textContent=score===150?'Xuất sắc! Em đã trả lời đúng tất cả câu hỏi. Robot AI rất tự hào về em!':score>=100?'Thật đáng khen! Em nắm bài rất tốt. Hãy chơi lại để chinh phục điểm tuyệt đối nhé!':'Em đã hoàn thành thử thách rồi! Ôn lại một chút và chơi lại để đạt thêm nhiều sao nhé!';$('speech').textContent='Chúc mừng em đã hoàn thành thử thách! Robot AI tặng em một tràng pháo tay! 👏'}
 $('restart').addEventListener('click',()=>{index=0;score=0;$('result').classList.add('hidden');$('quiz').classList.remove('hidden');render()});render();
 </script></body></html>
-
 
 
 
